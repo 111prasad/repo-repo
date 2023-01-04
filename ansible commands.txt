@@ -1,0 +1,63 @@
+connect to the ansible
+convert to root user
+sudo amazon-linux-extras install ansible2 -y
+yum install git python python-pip python-level openssl
+vi /etc/ansible/hosts--------insert
+in that path we need to add dev1,dev2,qa1 and qa2 private ip
+vi /etc/ansible/ansible.cfg---------insert
+inventory pattern and sudo user these both need to do uncommit 
+
+
+
+
+
+useradd ansible
+passwd ansible
+after complete the password
+visudo
+ansible ALL = (ALL) NOPASSWD : ALL
+vim /etc/ssh/sshd_config
+password authentication shoud be yes
+systemctl restart sshd
+systemctl status sshd
+su-ansible
+ssh - keygen
+ssh -copy-id ansible@localhost
+yes
+password
+ssh ansible@localhost
+hostname -i
+
+
+
+
+in dev1 and dev2 no need to generate the key
+ssh -copy-id ansible@dev1 pubip
+yes
+password
+ssh ansible@dev1 pubip
+hostname -i
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
